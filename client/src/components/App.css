@@ -1,0 +1,95 @@
+*{
+    padding: 0%;
+    margin: 0%;
+}
+body{
+background-image:#ffaa99;
+background-image:  
+radial-gradient(at 61% 99%, hsla(27,61%,76%,1) 0, transparent 55%),  
+radial-gradient(at 43% 31%, hsla(192,75%,62%,1) 0, transparent 50%),  
+radial-gradient(at 71% 37%, hsla(329,70%,73%,1) 0, transparent 52%),  
+radial-gradient(at 62% 59%, hsla(247,71%,65%,1) 0, transparent 47%),  
+radial-gradient(at 86% 53%, hsla(259,74%,63%,1) 0, transparent 45%),  
+radial-gradient(at 60% 23%, hsla(64,88%,68%,1) 0, transparent 41%),  
+radial-gradient(at 13% 64%, hsla(298,93%,76%,1) 0, transparent 47%);
+background-attachment: fixed;
+animation: movinggradirnt 5s ease infinite;
+background-size: 150%;
+}
+
+@keyframes movinggradirnt{
+    0%{
+        background-position: 0% 50%;
+    }
+    50%{
+        background-position: 100% 50%;
+    }
+    100%{
+        background-position: 0% 50%;
+    }
+}
+
+.dashboard-card{
+    width: 100px;
+    height: 100px;
+    background: #eaeaea;
+    margin: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.dashboard-card-container{
+    background: rgba( 255, 255, 255, 0.35 );
+    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+    backdrop-filter: blur( 2.5px );
+    -webkit-backdrop-filter: blur( 2.5px );
+    border-radius: 10px;
+    border: 1px solid rgba( 255, 255, 255, 0.18 );
+
+
+}
+
+.grid{
+    margin: 10px;
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    /* grid-template-columns: repeat(auto-fit, minmax(15rem,1fr)); */
+    grid-template-columns: repeat(auto-fit, minmax(210px,1fr) ) 300px;
+    grid-gap: 20px;
+    align-items: start;
+    
+}
+
+.grid > .file-dashboard{
+    background: #e9dcdc;
+    border: none;
+    box-shadow: 2px 2px 6px 6px rgba(0, 0, 0, 0.3);
+    border-radius: 20px;
+    text-align: center;
+    width: 250px;
+    overflow-wrap: break-word;
+    text-rendering: optimizeSpeed;
+    font-family: "Camphor";
+    transition: transform .3s;
+
+}
+
+.grid > .file-dashboard:hover{
+    transform: translateY(5px);
+    box-shadow: 2px 2px 26px 0px rgba(0, 0, 0, 0.3);
+}
+
+ .grid > .file-dashboard > .file-preview > img{
+    width: 210px;
+    height: 150px;
+    border-radius: 5px;
+    margin: 10px;
+    object-fit: cover;
+}
+
+.file-name {
+    font-size: .8rem;
+    text-align: center;
+}
