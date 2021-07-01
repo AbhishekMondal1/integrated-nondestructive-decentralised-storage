@@ -1,9 +1,14 @@
 import INDStorage from '../abis/INDStorage.json'
 import React, { useState, useEffect } from 'react';
+import { BrowserRouter as Router, Switch, Route, NavLink, Link } from "react-router-dom";
 import Navbar from './Navbar'
 import Main from './Main'
 import Web3 from 'web3';
 import './App.css';
+import Drop from './Drop';
+import Gridview from './Gridview';
+import Tableview from './Tableview';
+import Sidebar1 from './Sidebar1';
 
 const ipfsClient = require('ipfs-http-client')
 const ipfs = ipfsClient({ host: 'ipfs.infura.io', port: 5001, protocol: 'https' })
@@ -17,7 +22,8 @@ const App = () => {
   const[buffer, setBuffer] = useState(null)
   const[type, setType] = useState(null)
   const[name, setName] = useState(null)
-  
+  const[filesview, setFilesview] = useState(false)
+
   useEffect(() => {
     loadWeb3()
     loadBlockchainData()
@@ -75,9 +81,29 @@ const App = () => {
     }
   }
 
+  const captureDropFile = event => {
+    event.preventDefault()
+    console.log('dropped',event.dataTransfer.files[0]);
+    const file = event.dataTransfer.files[0]
+    const reader = new window.FileReader()
+
+    reader.readAsArrayBuffer(file)
+    reader.onloadend = () => {
+        setBuffer(Buffer(reader.result))
+        setType(file.type)
+        setName(file.name)
+    }
+  }
+
+  const cancleFile = event => {
+    event.preventDefault()
+    setBuffer(null)
+    setType(null)
+    setName(null)
+  }
+
   const uploadFile = description => {
     console.log("Submitting file to IPFS...")
-
     ipfs.add(buffer,{wrapWithDirectory:true}, (error, result) => {
       console.log('IPFS result', result)
       if(error) {
@@ -104,14 +130,45 @@ const App = () => {
     return (
       <div>
         <Navbar account={account} />
-        { loading
-          ? <div id="loader" className="text-center mt-5"><p>Loading...</p></div>
-          : <Main
-              files={files}
-              captureFile={captureFile}
-              uploadFile={uploadFile}
-            />
+        <Sidebar1 />
+        {
+          <div>
+            <Switch>
+              <Route exact path="/">
+              </Route>
+              <Route path="/share">{loading
+                ? <div id="loader" className="text-center mt-5"><p>Loading...</p></div>
+                : <Main
+                files={files}
+                captureFile={captureFile}
+                captureDropFile={captureDropFile}
+                uploadFile={uploadFile}
+                name={name}
+                cancleFile={cancleFile}
+                />}
+              </Route>
+              <Route path="/filestable">{loading
+                ? <div id="loader" className="text-center mt-5"><p>Loading...</p></div>
+                : <Tableview
+                files={files}
+                />}
+              </Route>
+              <Route path="/filesgrid">{loading
+                ? <div id="loader" className="text-center mt-5"><p>Loading...</p></div>
+                : <Gridview
+                files={files}
+                />}
+              </Route>
+            </Switch>
+          </div>
         }
+     
+        
+        
+        <br/>
+        <br/>
+        <br/>
+        {/* <Drop/> */}
       </div>
     );
 }

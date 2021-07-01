@@ -2,6 +2,12 @@
     padding: 0%;
     margin: 0%;
 }
+:root {
+  --main-bg-color: #edf5fe;
+  --light-blue: #03a9f4;
+  --border-color: #0288d147;
+  --container-width: 500px;
+}
 body{
 background-image:#ffaa99;
 background-image:  
@@ -13,7 +19,7 @@ radial-gradient(at 86% 53%, hsla(259,74%,63%,1) 0, transparent 45%),
 radial-gradient(at 60% 23%, hsla(64,88%,68%,1) 0, transparent 41%),  
 radial-gradient(at 13% 64%, hsla(298,93%,76%,1) 0, transparent 47%);
 background-attachment: fixed;
-animation: movinggradirnt 5s ease infinite;
+/* animation: movinggradirnt 5s ease infinite; */
 background-size: 150%;
 }
 
@@ -29,6 +35,7 @@ background-size: 150%;
     }
 }
 
+/*Grid layout */
 .dashboard-card{
     width: 100px;
     height: 100px;
@@ -92,4 +99,97 @@ background-size: 150%;
 .file-name {
     font-size: .8rem;
     text-align: center;
+}
+
+
+
+/*Drop zone */
+body,
+.upload-container,
+.drop-zone {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+body{
+  flex-direction: column;
+}
+.content{
+  /* display: flex;
+  align-items: center; */
+  justify-content: center;
+}
+.upload-container,
+.drop-zone {
+  flex-direction: column;
+}
+
+.upload-container {
+  background: #ffffff;
+  border-radius: 25px;
+  box-shadow: 0px 20px 20px 0px #0000002e;
+  width: 550px;
+  /* background: linear-gradient(90deg, rgb(33, 37, 41) 0%, rgba(33, 37, 41, 0.4) 100%);
+  background-image: linear-gradient(90deg, rgb(33, 37, 41) 0%, rgba(33, 37, 41, 0.4) 100%); */
+  /* backdrop-filter: blur(200px); */
+}
+
+.drop-zone {
+  width: var(--container-width);
+  min-height: 200px;
+  border: 2px dashed var(--border-color);
+  border-radius: 10px;
+  margin: 30px;
+  transition: 0.2s all ease-in;
+}
+
+.drop-zone.dragged {
+  background: var(--main-bg-color);
+  border-color: #0288d1;
+}
+
+.drop-zone input#fileInput{
+  display: none;
+}
+
+.icon-container {
+  position: relative;
+  width: 75px;
+  height: 100px;
+  text-align: start;
+}
+
+.icon-container img {
+  width: 75px;
+  position: absolute;
+  transition: transform 0.25s ease-in-out;
+  transform-origin: bottom;
+}
+
+.icon-container .center {
+  z-index: 10;
+}
+.icon-container .right,
+.icon-container .left {
+  filter: grayscale(0.5);
+  transform: scale(0.9);
+}
+
+.dragged .center {
+  transform: translateY(-5px);
+}
+.dragged .right {
+  transform: rotate(10deg) scale(0.9) translateX(20px);
+}
+.dragged .left {
+  transform: rotate(-10deg) scale(0.9) translateX(-20px);
+}
+
+.title {
+  font-size: large;
+}
+
+#browseBtn {
+  color: #2196f3;
+  cursor: pointer;
 }
