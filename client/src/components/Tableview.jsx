@@ -6,40 +6,40 @@ const Tableview = (props) => {
       <div>
         <table
           className="table-sm table-bordered text-monospace"
-          style={{ width: "1000px", maxHeight: "450px" }}
-        >
-          <thead style={{ fontSize: "15px" }}>
-            <tr className="bg-dark text-white">
-              <th scope="col" style={{ width: "10px" }}>
-                id
-              </th>
-              <th scope="col" style={{ width: "200px" }}>
-                name
-              </th>
-              <th scope="col" style={{ width: "230px" }}>
-                description
-              </th>
-              <th scope="col" style={{ width: "120px" }}>
-                type
-              </th>
-              <th scope="col" style={{ width: "90px" }}>
-                size
-              </th>
-              <th scope="col" style={{ width: "90px" }}>
-                date
-              </th>
-              <th scope="col" style={{ width: "120px" }}>
-                uploader/view
-              </th>
-              <th scope="col" style={{ width: "120px" }}>
-                hash/view/get
-              </th>
-            </tr>
-          </thead>
+          //style={{ width: "1000px", maxHeight: "450px" }}
+        ><thead >
+        <tr >
+          <th>
+            id
+          </th>
+          <th>
+            name
+          </th>
+          <th>
+            description
+          </th>
+          <th>
+            type
+          </th>
+          <th>
+            size
+          </th>
+          <th>
+            date
+          </th>
+          <th>
+            uploader/view
+          </th>
+          <th>
+            hash/view/get
+          </th>
+        </tr>
+      </thead>
+
           {/*<Cardview/>*/}
           {props.files.map((file, key) => {
             return (
-              <thead style={{ fontSize: "12px" }} key={key}>
+              <thead style={{ fontSize: "13px" }}  key={key}>
                 <tr>
                   <td>{file.fileId}</td>
                   <td>{file.fileName}</td>
