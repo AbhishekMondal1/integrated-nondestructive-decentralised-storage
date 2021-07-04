@@ -35,6 +35,52 @@ background-size: 100%;
     }
 }
 
+/*Tableview layout*/
+table{
+  position: absolute;
+  padding: 5px solid rgb(15, 13, 13);
+  z-index: 2;
+  left: 50%;
+  top: 70.5%;
+  transform: translate(-50%,-50%);
+  width: 57%; 
+  border-collapse: collapse;
+  border-spacing: 0;
+  border-radius: 12px 12px 0 0;
+  overflow: hidden;
+  box-shadow: 0 2px 15px rgba(64,64,64,.7);
+  background: #fafafa;
+  text-align: center;
+  }
+
+
+ 
+ td , th{
+  padding: 15px 20px;
+  }
+ 
+ th{
+  background-color: #ba68c8;
+  color: #fafafa;
+  text-transform: uppercase;
+  font-family: 'Roboto', sans-serif;
+ }
+ 
+ td{
+   font-family: 'Open Sans' sans-serif;
+ }
+ 
+ tr{
+  width: 100%;
+  background-color: #fafafa;
+  font-family: 'Montserrat', sans-serif;
+ }
+ 
+ tr:nth-child(odd){
+  background-color: #eeeeee;
+ }
+
+
 /*Grid layout */
 .dashboard-card{
     width: 100px;
