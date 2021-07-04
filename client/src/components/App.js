@@ -44,7 +44,7 @@ const App = () => {
 
   const loadBlockchainData = async () => {
     const web3 = window.web3
-    console.log(web3);
+    console.log(web3.eth.getChainId());
     const accounts = await web3.eth.getAccounts();
     setAccount(accounts[0])   
     console.log(accounts);

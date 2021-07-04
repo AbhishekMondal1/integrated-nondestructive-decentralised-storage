@@ -17,7 +17,7 @@ body{
     top: 0;
     left: 0;
     height: 100%;
-    width: 60px;
+    width: 60px ;
     background: #11101d;
     padding: 6pc 3px;
     transition: all 0.5s ease;
@@ -78,6 +78,7 @@ body{
     text-align: center;
     line-height: 50px;
     transform: translateX(-50%);
+    transition: all 0.5s ease;
 }
 .sidebar #btn1{
     position: absolute;
@@ -117,10 +118,15 @@ body{
     border-radius: 12px;
     transition: all 0.4s ease;
     white-space: nowrap; 
+    transition: all 0.5s;
 }
 .sidebar ul li a:hover{
-    color: #11101d;
-    background: #fff
+    color: #13088b;
+    background: #fff;
+}
+.sidebar.active ul li a:hover{
+    color: #10d6bc;
+    background: #fff;
 }
 .sidebar ul li .tooltip{
     position: absolute;
@@ -272,11 +278,19 @@ body{
     left: 240px;
 }
 
-.sidebar .active2{
+.sidebar .nav_list li .active2{
     position: absolute;
     width: 2px;
-    /* height: 100%; */
-    background-color: #bb33c7;
+    /* transition-duration: 0.5s; */
+}
+.sidebar .nav_list li .active2::before{
+    position: absolute;
+    content: '';
+    width: 4px;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    height: 70%;
+    background-color: #f16f3b;
 }
 .sidebar .link_name :hover{
     position: absolute;
@@ -284,9 +298,6 @@ body{
     /* height: 100%; */
     background-color: #fff;
     color: #fff;
-}
-.active2 span{
-    /* color: #bb33c7; */
 }
 .sidebar .active2 i{
     color: rgb(74, 230, 74);
