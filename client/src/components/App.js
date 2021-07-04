@@ -5,7 +5,7 @@ import Navbar from './Navbar'
 import Main from './Main'
 import Web3 from 'web3';
 import './App.css';
-import Drop from './Drop';
+//import Drop from './Drop';
 import Gridview from './Gridview';
 import Tableview from './Tableview';
 import Sidebar1 from './Sidebar1';
