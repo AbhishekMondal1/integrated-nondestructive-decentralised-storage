@@ -7,8 +7,11 @@ import Web3 from 'web3';
 import './App.css';
 //import Drop from './Drop';
 import Gridview from './Gridview';
+import Gridlayout from './Gridlayout'
 import Tableview from './Tableview';
 import Sidebar1 from './Sidebar1';
+import Home from './Home';
+// import Earth from './components/EarthComponent/Earth';
 
 const ipfsClient = require('ipfs-http-client')
 const ipfs = ipfsClient({ host: 'ipfs.infura.io', port: 5001, protocol: 'https' })
@@ -135,6 +138,8 @@ const App = () => {
           <div>
             <Switch>
               <Route exact path="/">
+                {/* <Earth/> */}
+                <Home/>
               </Route>
               <Route path="/share">{loading
                 ? <div id="loader" className="text-center mt-5"><p>Loading...</p></div>
@@ -147,15 +152,15 @@ const App = () => {
                 cancleFile={cancleFile}
                 />}
               </Route>
-              <Route path="/filestable">{loading
+              <Route path="/fileslist">{loading
                 ? <div id="loader" className="text-center mt-5"><p>Loading...</p></div>
                 : <Tableview
                 files={files}
                 />}
-              </Route>
+              </Route>              
               <Route path="/filesgrid">{loading
                 ? <div id="loader" className="text-center mt-5"><p>Loading...</p></div>
-                : <Gridview
+                : <Gridlayout
                 files={files}
                 />}
               </Route>

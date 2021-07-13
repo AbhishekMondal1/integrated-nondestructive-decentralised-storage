@@ -1,7 +1,5 @@
 import React, { useState, useRef } from 'react';
 import Filedrop from './Filedrop';
-import { convertBytes } from "./helpers";
-import moment from "moment";
 
 const Main = (props) => {
     return (

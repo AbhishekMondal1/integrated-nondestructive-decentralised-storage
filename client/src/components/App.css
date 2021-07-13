@@ -9,8 +9,7 @@
   --container-width: 500px;
 }
 body{
-background-image:#ffaa99;
-background-image:  /*url("../bg1.jpg");*/
+background-image: 
 radial-gradient(at 61% 99%, hsla(27,61%,76%,1) 0, transparent 55%),  
 radial-gradient(at 43% 31%, hsla(192,75%,62%,1) 0, transparent 50%),  
 radial-gradient(at 71% 37%, hsla(329,70%,73%,1) 0, transparent 52%),  
@@ -21,6 +20,16 @@ radial-gradient(at 13% 64%, hsla(298,93%,76%,1) 0, transparent 47%);
 background-attachment: fixed;
 /* animation: movinggradirnt 5s ease infinite; */
 background-size: 100%;
+}
+canvas {
+        display: block;
+      }
+.navbar{
+  background-color: #333;
+}
+.wide{
+  margin: 0 50px 0 0px;
+  height:0px;
 }
 
 @keyframes movinggradirnt{
@@ -51,6 +60,12 @@ table{
   box-shadow: 0 2px 15px rgba(64,64,64,.7);
   background: #fafafa;
   text-align: center;
+  }
+
+  .table-view{
+    margin: 15px;
+    width: 100vw;;
+    height: 100vh;
   }
 
 
@@ -109,9 +124,9 @@ table{
     display: grid;
     grid-template-columns: repeat(4,1fr);
     /* grid-template-columns: repeat(auto-fit, minmax(15rem,1fr)); */
-    /* grid-template-columns: repeat(auto-fill, minmax(210px,1fr) ) 100px; */
-    grid-template-columns: repeat(auto-fit,1fr);
-    grid-gap: 30px;
+    /* grid-template-columns: repeat(auto-fit, minmax(350px,1fr) ) ; */
+    /* grid-template-columns: repeat(auto-fit,1fr); */
+    grid-gap: 10px;
     align-items: start;
     
 }
@@ -143,8 +158,8 @@ table{
     object-fit: cover;
 }
 
-.file-name {
-    font-size: .8rem;
+.file-name  h5{
+    font-size: 15px;
     text-align: center;
 }
 
@@ -255,4 +270,8 @@ body{
 #browseBtn {
   color: #2196f3;
   cursor: pointer;
+}
+
+.navbar {
+ width:99vw;
 }

@@ -20,11 +20,6 @@ const Sidebar1 = () => {
                 </div>
                 <ul className="nav_list">
                     <li>
-                            <i className='bx bx-search' ></i>
-                            <input type="text" placeholder="Search"/>
-                            <span className="tooltip">Search</span>
-                    </li>
-                    <li>
                         <NavLink activeClassName="active2" exact to="/">
                             <i class='bx bx-home'></i>
                             <span className="link_name">Home</span>
@@ -39,7 +34,7 @@ const Sidebar1 = () => {
                         </NavLink>
                     </li>
                     <li>
-                        <NavLink activeClassName="active2" to="/filestable">
+                        <NavLink activeClassName="active2" to="/fileslist">
                             <i class='bx bx-list-ul' ></i>
                             <span className="link_name">List View</span>
                             <span className="tooltip">List View</span>
@@ -53,36 +48,14 @@ const Sidebar1 = () => {
                         </NavLink>
                     </li>
                     <li>
-                        <NavLink activeClassName="active2" to="/fl">
-                            <i className='bx bx-cog' ></i>
-                            <span className="link_name">Settings</span>
-                            <span className="tooltip">Settings</span>
-                        </NavLink>
-                    </li>
-                    <li>
                         <NavLink activeClassName="active2" to="/f2">
-                            <i className='bx bxs-palette bx-flip-vertical' ></i>
+                            <i className='bx bxs-palette bx-flip-vertical' onClick={'' }></i>
                             <span className="link_name">Background</span>
                             <span className="tooltip">Background</span>
                         </NavLink>
                     </li>
                 </ul>
-                <div className="profile_content">
-                    <div className="profile">
-                        <div className="profile_details">
-                            <img src={profile} alt="" srcset=""/>
-                            <div className="name_job">
-                                <div className="name">Abhi</div>
-                                <div className="job">Dapp Developer</div>
-                            </div>
-                        </div>
-                        <i className='bx bxs-log-out' id='log_out' ></i>
-                    </div>
-                </div>
             </div>
-            {/*<div className="home_content">
-                <div className="text">Home</div>
-            </div>*/}
         </div>
     )
 }
