@@ -1,0 +1,174 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@200;400;500;600&display=swap');
+.homecontainer{
+    width: 99vw;
+    height: 100vh;
+    background: #42455a;
+    background-image: url('./background1.jpg');
+    background-size: cover;
+}
+
+.header{
+    width: 80%;
+    height: 70%;
+    top: 25%;
+    left: 130px;
+    position: absolute;
+    color: #fff;
+}
+
+.app-text{
+    width: 50%;
+    float: right;
+}
+
+.app-text h1{
+    font-size: 43px;
+    width: 640px;
+    position: relative;
+    margin-left: 40px;
+}
+
+.app-text p{
+    width: 650px;
+    font-size: 15px;
+    margin: 30px 0 30px 40px;
+    line-height: 25px;
+    color: #082972;
+}
+    
+.startbtn {background-image:linear-gradient(to right, #F09819 0%, #EDDE5D  51%, #F09819  100%)}
+.startbtn {
+    margin: 10px;
+    padding: 15px 45px;
+    text-align: center;
+    justify-content: center ;
+    text-transform: uppercase;
+    transition: 0.5s;
+    background-size: 200% auto;
+    color: white;            
+    box-shadow: 0 0 20px rgb(34, 40, 59);
+    border-radius: 30px;
+    display: block;
+    width: 250px;
+    position: absolute;
+    right: 20px;
+    top: 350px;
+    font-family: 'Montserrat';
+    font-weight: 500;
+}
+
+.startbtn:hover {
+    background-position: right center; /* change the direction of the change here */
+    color: #fff;
+    text-decoration: none;
+}
+
+         .btn-grad {background-image: linear-gradient(to right, #F09819 0%, #EDDE5D  51%, #F09819  100%)}
+         .btn-grad {
+            margin: 10px;
+            padding: 15px 45px;
+            text-align: center;
+            text-transform: uppercase;
+            transition: 0.5s;
+            background-size: 200% auto;
+            color: white;            
+            box-shadow: 0 0 20px #eee;
+            border-radius: 10px;
+            display: block;
+          }
+
+          .btn-grad:hover {
+            background-position: right center; /* change the direction of the change here */
+            color: #fff;
+            text-decoration: none;
+          }
+         
+/*
+.app-picture{
+    width: 50%;
+    float: right;
+}
+.app-picture img{
+    width: 100%;
+    margin-top: -20px;
+    padding: 50px;
+}
+*/
+.widthline{
+    width: 100vw;
+}
+
+.main_ipfs_about{
+    width: 80%;
+    height: 70%;
+    top: 100%;
+    left: 130px;
+    position: absolute;
+    color: #fff;
+    /* background-size: cover; */
+    /* width: 100%;  */
+    object-fit: cover;
+}
+
+.ipfs_head{
+    margin-left: 40%;
+    margin-right: auto;
+    font-size: 40px;
+}
+.ipfs_details{
+    /* display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px,300px)); */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.ipfs_details .bx{
+    margin-top: 40px;
+    margin-left: 25%;
+    width: 300px;
+    font-size: 120px;
+    color: #000;
+    background-image: -webkit-linear-gradient(92deg, #2678f3, #fe3af4);
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+	-webkit-animation: hue 5s infinite linear;
+}
+
+@-webkit-keyframes hue {
+  from {
+    -webkit-filter: hue-rotate(0deg);
+  }
+  to {
+    -webkit-filter: hue-rotate(-360deg);
+  }
+}
+
+
+.images{
+    /* height: 90%; */
+    top: 150%;
+    left: 780px;
+    position: absolute;
+    color: #fff;
+    z-index: -1;
+}
+
+.images img{
+    width: 80%;
+}
+
+.features{
+    position: absolute;
+    top: 150%;
+    left: 130px;
+    color: #fff;
+}
+
+.feature1, .feature2, .feature3{
+    margin-top: 20px;
+    border: 1px solid;
+    border-radius: 20px;
+    padding: 10px;
+
+}
