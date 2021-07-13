@@ -48,7 +48,7 @@ const Sidebar1 = () => {
                         </NavLink>
                     </li>
                     <li>
-                        <NavLink activeClassName="active2" to="/f2">
+                        <NavLink activeClassName="active2" to="/theme">
                             <i className='bx bxs-palette bx-flip-vertical' onClick={'' }></i>
                             <span className="link_name">Background</span>
                             <span className="tooltip">Background</span>

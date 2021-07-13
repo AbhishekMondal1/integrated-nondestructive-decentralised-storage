@@ -20,7 +20,30 @@ radial-gradient(at 13% 64%, hsla(298,93%,76%,1) 0, transparent 47%);
 background-attachment: fixed;
 /* animation: movinggradirnt 5s ease infinite; */
 background-size: 100%;
+
+ margin: 0;
+  padding: 0;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
 }
+
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,600&display=swap');
+
+.App {
+  height: 100;
+  /* width: 100; */
+  /* padding-top: 10px; */
+}
+.text-center {
+  text-align : center;
+}
+
+.title {
+  font-size: 20px;
+}
+
+
 canvas {
         display: block;
       }
@@ -60,11 +83,14 @@ table{
   box-shadow: 0 2px 15px rgba(64,64,64,.7);
   background: #fafafa;
   text-align: center;
-  }
+}
+.table-sm{
 
+  margin: 0 0 40px 0;
+}
   .table-view{
-    margin: 15px;
-    width: 100vw;;
+    margin: 70px;
+    width: 100vw;
     height: 100vh;
   }
 
@@ -166,7 +192,7 @@ table{
 
 
 /*Drop zone */
-body,
+
 .upload-container,
 .drop-zone {
   display: flex;
@@ -179,7 +205,8 @@ body{
 .content{
   /* display: flex;
   align-items: center; */
-  justify-content: center;
+  /* justify-content: center; */
+  margin-left: 250px;
 }
 .upload-container,
 .drop-zone {
@@ -206,7 +233,7 @@ body{
 #fileDescription{
   position: relative;
   width: min-content;
-  position: absolute;
+  position: relative;
   left: 50%;
   top: 68%;
   transform: translate(-50%,-50%);
@@ -270,8 +297,4 @@ body{
 #browseBtn {
   color: #2196f3;
   cursor: pointer;
-}
-
-.navbar {
- /* width:99vw; */
 }

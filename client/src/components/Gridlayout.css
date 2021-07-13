@@ -9,6 +9,7 @@ body{
     grid-template-columns: repeat(auto-fit, minmax(200px,200px));
     grid-gap: 22px;
     width: 80vw;
+    margin-left: 100px;
     /* transition: all 3s ease-out; */
      /* transition: height 480ms ease-out 0s; */
 }

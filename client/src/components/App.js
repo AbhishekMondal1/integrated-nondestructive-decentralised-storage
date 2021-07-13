@@ -12,6 +12,8 @@ import Tableview from './Tableview';
 import Sidebar1 from './Sidebar1';
 import Home from './Home';
 // import Earth from './components/EarthComponent/Earth';
+import "./App.css";
+import "./switchetr.scss";
 
 const ipfsClient = require('ipfs-http-client')
 const ipfs = ipfsClient({ host: 'ipfs.infura.io', port: 5001, protocol: 'https' })
@@ -26,6 +28,21 @@ const App = () => {
   const[type, setType] = useState(null)
   const[name, setName] = useState(null)
   const[filesview, setFilesview] = useState(false)
+
+  const [colorTheme, setColorTheme] = useState("theme-white");
+
+useEffect(() => {
+  const currentThemeColor = localStorage.getItem("theme-color");
+  if (currentThemeColor) {
+    setColorTheme(currentThemeColor);
+  }
+}, []);
+
+const handleClick = (theme) => {
+  setColorTheme(theme);
+  localStorage.setItem("theme-color", theme);
+  };
+  
 
   useEffect(() => {
     loadWeb3()
@@ -131,50 +148,114 @@ const App = () => {
   }
 
     return (
-      <div>
+      // <div>
+      <div className={`App ${colorTheme}`}>
         <Navbar account={account} />
+
         <Sidebar1 />
         {
           <div>
             <Switch>
               <Route exact path="/">
                 {/* <Earth/> */}
-                <Home/>
+                <Home />
               </Route>
-              <Route path="/share">{loading
-                ? <div id="loader" className="text-center mt-5"><p>Loading...</p></div>
-                : <Main
-                files={files}
-                captureFile={captureFile}
-                captureDropFile={captureDropFile}
-                uploadFile={uploadFile}
-                name={name}
-                cancleFile={cancleFile}
-                />}
+              <Route path="/share">
+                {loading ? (
+                  <div id="loader" className="text-center mt-5">
+                    <p>Loading...</p>
+                  </div>
+                ) : (
+                  <Main
+                    files={files}
+                    captureFile={captureFile}
+                    captureDropFile={captureDropFile}
+                    uploadFile={uploadFile}
+                    name={name}
+                    cancleFile={cancleFile}
+                  />
+                )}
               </Route>
-              <Route path="/fileslist">{loading
-                ? <div id="loader" className="text-center mt-5"><p>Loading...</p></div>
-                : <Tableview
-                files={files}
-                />}
-              </Route>              
-              <Route path="/filesgrid">{loading
-                ? <div id="loader" className="text-center mt-5"><p>Loading...</p></div>
-                : <Gridlayout
-                files={files}
-                />}
+              <Route path="/fileslist">
+                {loading ? (
+                  <div id="loader" className="text-center mt-5">
+                    <p>Loading...</p>
+                  </div>
+                ) : (
+                  <Tableview files={files} />
+                )}
+              </Route>
+              <Route path="/filesgrid">
+                {loading ? (
+                  <div id="loader" className="text-center mt-5">
+                    <p>Loading...</p>
+                  </div>
+                ) : (
+                  <Gridlayout files={files} />
+                )}
+              </Route>
+              <Route path="/theme">
+                {loading ? (
+                  <div id="loader" className="text-center mt-5">
+                    <p>Loading...</p>
+                  </div>
+                ) : (
+                  <div className="theme-options">
+                    <div
+                      id="theme-white"
+                      onClick={() => handleClick("theme-white")}
+                      className={`${
+                        colorTheme === "theme-white" ? "active" : ""
+                      }`}
+                    />
+                    <div
+                      id="theme-blue"
+                      onClick={() => handleClick("theme-blue")}
+                      className={`${
+                        colorTheme === "theme-blue" ? "active" : ""
+                      }`}
+                    />
+                    <div
+                      id="theme-orange"
+                      onClick={() => handleClick("theme-orange")}
+                      className={`${
+                        colorTheme === "theme-orange" ? "active" : ""
+                      }`}
+                    />
+                    <div
+                      id="theme-purple"
+                      onClick={() => handleClick("theme-purple")}
+                      className={`${
+                        colorTheme === "theme-purple" ? "active" : ""
+                      }`}
+                    />
+                    <div
+                      id="theme-green"
+                      onClick={() => handleClick("theme-green")}
+                      className={`${
+                        colorTheme === "theme-green" ? "active" : ""
+                      }`}
+                    />
+                    <div
+                      id="theme-black"
+                      onClick={() => handleClick("theme-black")}
+                      className={`${
+                        colorTheme === "theme-black" ? "active" : ""
+                      }`}
+                    />
+                  </div>
+                )}
               </Route>
             </Switch>
           </div>
         }
-     
-        
-        
-        <br/>
-        <br/>
-        <br/>
+
+        <br />
+        <br />
+        <br />
         {/* <Drop/> */}
       </div>
+      // </div>
     );
 }
 

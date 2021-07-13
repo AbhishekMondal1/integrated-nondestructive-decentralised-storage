@@ -12,10 +12,10 @@ const Home = () => {
               INDS <br /> Integrated Nondestructive Decentralised Storage
             </h1>
             <p>
-              Secured Privacy concerned Cloud Storage Application. No 3rd party
-              company owner can see your data.
-              <br /> Share files all over the world without any censorship.
-              <br /> Try it and share it.
+              Secured Privacy concerned Cloud Storage Application. <br />
+              No 3rd party company owner can see your data.<br />
+              Share files all over the world without any censorship.<br />
+              Try it and share it.
             </p>
           </div>
           <NavLink className="startbtn" to="/share">Start Here</NavLink>
